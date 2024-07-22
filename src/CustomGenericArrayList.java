@@ -1,5 +1,10 @@
 public class  CustomGenericArrayList<T> {
     private Object[] data;
+
+    public int getSize() {
+        return size;
+    }
+
     private static final int DEFAULT_SIZE = 10;
     private int size = 0;
     CustomGenericArrayList(){
@@ -41,5 +46,14 @@ public class  CustomGenericArrayList<T> {
         s.append(data[size-1]+"]");
         return s.toString();
     }
+
+
+    public  T get(int i){
+        if(i>=size){
+            throw new IndexOutOfBoundsException("Index " + i + " is out of bounds for length "+size+ "!");
+        }
+        return  (T) data[i];
+    }
+
 
 }
